@@ -65,8 +65,6 @@ class BasePage:
 
     @allure.step('Перетаскивание элемента')
     def drag_and_drop_element(self, locator_from, locator_to):
-        WebDriverWait(self.driver, 15).until(EC.visibility_of_element_located(locator_from))
-        WebDriverWait(self.driver, 15).until(EC.visibility_of_element_located(locator_to))
         element_from = self.driver.find_element(*locator_from)
         element_to = self.driver.find_element(*locator_to)
         self.driver.execute_script("""

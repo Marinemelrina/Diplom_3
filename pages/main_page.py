@@ -5,8 +5,12 @@ from pages.base_page import BasePage
 
 class MainPage(BasePage):
 
+    def __init__(self, driver):
+        super().__init__(driver)
+        self.main_page = None
+
     @allure.step('Клик по кнопке "Войти в аккаунт"')
-    def click_on_enter_btn(self):
+    def click_account_btn(self):
         self.move_to_element_and_click(MainPageLocators.WELCOME_BUTTON)
 
     @allure.step('Найти ингредиент "Флюоресцентная булка"')
@@ -73,3 +77,4 @@ class MainPage(BasePage):
         order = self.get_text_of_element(MainPageLocators.ORDER_NUMBER)
         self.move_to_element_and_click(MainPageLocators.CLOSE_BUTTON)
         return order
+

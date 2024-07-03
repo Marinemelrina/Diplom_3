@@ -49,4 +49,21 @@ class AccountPage(BasePage):
         self.set_text_to_element(AccountPageLocators.INPUT_PASSWORD, user_data['password'])
         self.click_to_visible_element(AccountPageLocators.ENTER_BUTTON)
 
+    @allure.step('Ввод email в поле для ввода email')
+    def set_email(self, email):
+        self.set_text_to_element(AccountPageLocators.INPUT_EMAIL, email)
+
+
+    @allure.step('Ввод password в поле для ввода password')
+    def set_password(self, password):
+        self.set_text_to_element(AccountPageLocators.INPUT_PASSWORD, password)
+
+
+    @allure.step('Клик по кнопке Войти')
+    def click_enter_btn(self):
+        self.click_to_visible_element(AccountPageLocators.ENTER_BUTTON)
+
+
+
+
 
